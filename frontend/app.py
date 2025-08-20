@@ -48,7 +48,8 @@ app.layout = html.Div(children=[
     html.Div(style=styles['container'], children=[
         html.H1(
             children='Pink Morsel Sales',
-            style=styles['header']
+            style=styles['header'],
+            id='header',
         ),
         html.Div(style=styles['controlsContainer'], children=[
             html.Div('Select a region to view sales:', style=styles['subHeader']),
