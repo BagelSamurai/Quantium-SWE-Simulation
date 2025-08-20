@@ -1,7 +1,7 @@
 from dash import Dash, dcc, html, callback, Output, Input
 import plotly.express as px
 import pandas as pd
-
+from pathlib import Path
 app = Dash(__name__)
 
 region_colors = {
@@ -39,8 +39,8 @@ styles = {
         'marginBottom': '20px'
     }
 }
-
-df = pd.read_csv('../data/cleaned/cleaned_data.csv')
+DATA_PATH = Path(__file__).parent / '../data/cleaned/cleaned_data.csv'
+df = pd.read_csv(DATA_PATH)
 df['date'] = pd.to_datetime(df['date'])
 df.set_index('date', inplace=True)
 
